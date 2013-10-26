@@ -6,7 +6,7 @@ function confrontaCon(currentPic) {
 
 	IM.compare(document.body,
 		[
-			    new IM.image(sketcher.toDataURL(black), dimens, dimens),
+			    new IM.image(sketcher.toDataURL(), dimens, dimens),
 		       	new IM.image(currentPic, dimens, dimens),
 		],
 		function success(aCanvas, nElapsedTime, nPercentageMatch) {
