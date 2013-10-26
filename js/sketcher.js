@@ -5,7 +5,7 @@ function Sketcher( canvasID, brushImage ) {
 	this.canvasID = canvasID;
 	this.canvas = $("#"+canvasID);
 	this.context = this.canvas.get(0).getContext("2d");	
-	this.context.strokeStyle = "#FFFFFF";
+	this.context.strokeStyle = "red";
 	this.context.lineWidth = 3;
 	this.lastMousePoint = {x:0, y:0};
     

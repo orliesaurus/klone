@@ -12,6 +12,7 @@
 <script src="js/sketcher.js"></script>
 <script src="js/trigonometry.js"></script>
 <script src="js/jquery.countdown.js"></script>
+<script src="js/cosanostra.js"></script>
 
 <link rel="stylesheet" href="assets/bootstrap.css" />
 <link rel="stylesheet" href="assets/styles.css" />
@@ -37,23 +38,22 @@ var alt = window.innerHeight;
 var larg = window.innerWidth;
 var dimens = Math.min(alt,larg)-44;
 
+
 $(document).ready(function(e) {
 	$("#sketch").attr("width",dimens);
   $("#sketch").attr("height",dimens);
-	sketcher = new Sketcher( "sketch" );
+  var sketchpos = $("#sketch").position();
 
-  $('.yolocount').countdown({
-          date: +(new Date) + 31000,
-          render: function(data) {
-        if (data.sec >= 1) {
-          $(this.el).text(this.leadingZeros(data.sec-1, 2) + " sec")
-        }
-        },
-        onEnd: function() {
-          pic = sketcher.toDataURL1('black')
-          alert("ass");
-        }
-      });
+	sketcher = new Sketcher( "sketch" );
+$("#sketch").img_load();
+$("#imgappr").css({"height": dimens, 
+                    "width": dimens,
+                    "top": sketchpos.top-20,
+                    "left": sketchpos.left,
+                    "position":"absolute",
+                    "background-color":"red left top "+ dimens+ dimens+"url('./images/cd.png')"
+
+                    });
 
 
 });
@@ -74,7 +74,7 @@ var larg = window.innerWidth;
 <a href="#"><input type="button" class="btn btn-success" value="New Game" onclick="sketcher.clear();" /></a>
 <a target="_blank" href="javascript: window.open(sketcher.toDataURL1('black'), 'Klone Save as Image');"><input type="button" class="btn btn-success" value="Save image"/></a>
 
-<li><canvas id="sketch" width="1024" height="640" /></li>
+<li><div id="imgappr">asd</div><canvas id="sketch" width="1024" height="640"></canvas></li>
 
 
 <br>
