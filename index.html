@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <!-- Pull the engine from the Quintus CDN or load it locally -->
+    <!-- (use quintus-all.min.js for production) -->
+    <script src='http://cdn.html5quintus.com/v0.1.5/quintus-all.js'></script>
+  </head>
+   <body>
+     <script>
+
+//var Q = Quintus({ development: true }).setup({ maximize: true }).include("Sprites, Scenes, Input, Touch");
+
+
+var Q = Quintus().include("Sprites").setup();
+
+Q.Sprite.extend("Circle", {
+  init: function(p) {
+    this._super({
+      asset: "ball.png",
+      x: 150,
+      y: 150,
+      scale: 0.5
+    });
+  }
+});
+
+// Make sure penguin.png is loaded
+Q.load("ball.png",function() {
+   var penguin = new Q.Circle();
+
+   Q.gameLoop(function(dt) {
+     Q.clear();
+     penguin.update(dt);
+     penguin.render(Q.ctx);
+   });
+ });
+
+   </script>
+   </body>
+</html>

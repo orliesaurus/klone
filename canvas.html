@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+<title></title>
+
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/modernizr.custom.34982.js"></script>
+
+<script src="js/sketcher.js"></script>
+<script src="js/trigonometry.js"></script>
+<script src="js/jquery.countdown.js"></script>
+
+<link rel="stylesheet" href="assets/bootstrap.css" />
+<link rel="stylesheet" href="assets/styles.css" />
+
+<script>
+
+
+        /*render: function(data) {
+          $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+        },
+        onEnd: function() {
+          $(this.el).addClass('ended');
+        }
+      }).on("click", function() {
+        $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+      });
+
+*/
+
+var sketcher = null;
+var pic = null;
+var alt = window.innerHeight;
+var larg = window.innerWidth;
+var dimens = Math.min(alt,larg)-44;
+
+$(document).ready(function(e) {
+	$("#sketch").attr("width",dimens);
+  $("#sketch").attr("height",dimens);
+	sketcher = new Sketcher( "sketch" );
+
+  $('.yolocount').countdown({
+          date: +(new Date) + 31000,
+          render: function(data) {
+        if (data.sec >= 1) {
+          $(this.el).text(this.leadingZeros(data.sec-1, 2) + " sec")
+        }
+        },
+        onEnd: function() {
+          pic = sketcher.toDataURL1('black')
+          alert("ass");
+        }
+      });
+
+
+});
+
+/*
+$(window).resize(function() {
+ var alt = window.innerHeight;
+var larg = window.innerWidth;
+  $("#sketch").attr("width",larg);
+  $("#sketch").attr("height",alt);
+});*/
+
+</script>
+
+</head>
+
+<body><div class="container">
+<a href="#"><input type="button" class="btn btn-success" value="New Game" onclick="sketcher.clear();" /></a>
+<a target="_blank" href="javascript: window.open(sketcher.toDataURL1('black'), 'Klone Save as Image');"><input type="button" class="btn btn-success" value="Save image"/></a>
+
+<li><canvas id="sketch" width="1024" height="640" /></li>
+
+
+<br>
+<p class="yolocount">Time:
+</p>
+
+</div>
+</body>
+</html>

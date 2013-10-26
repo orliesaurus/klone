@@ -1,0 +1,18 @@
+/* CSS Document */
+
+body {
+	color: white;
+	padding: 0px;
+	margin: 0px;
+	text-align:center;
+	list-style-type: none;
+	background-color: black;
+}
+
+
+
+#sketch {
+	border: 2px solid #888888;
+	background-color: black;
+	border-radius: 0px;
+}
