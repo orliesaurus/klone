@@ -14,7 +14,7 @@ jQuery.fn.extend({
         }
         },
         onEnd: function() {
-          pic = sketcher.toDataURL1('black')
+          confrontaCon('images/cd.png');
           //reset the screen and go to next level
         }
       });

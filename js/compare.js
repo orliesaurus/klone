@@ -4,7 +4,7 @@ function confrontaCon(currentPic) {
 	IM.setAsynchronous(true);
 	IM.setTolerance(0);
 
-	$('#imgappr').html('<canvas id="compare"/ style:"visible:hidden;"/>');
+	$('#imgappr').html('<canvas id="compare" style:"visible:hidden;"/>');
 	var can = document.getElementById('compare');
     var ctx = can.getContext('2d');
     var img = new Image();
@@ -15,7 +15,7 @@ function confrontaCon(currentPic) {
 	}
 	img.src = currentPic;
 
-	IM.compare(document.body,
+	IM.compare(
 		[
 			    document.getElementById("sketch"),
 		       	document.getElementById("compare")

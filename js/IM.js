@@ -132,7 +132,7 @@
                 aCanvasData = oContext.getImageData(0, 0, oCanvas.width, oCanvas.height),
                 sData = JSON.stringify([].slice.call(aCanvasData.data)),
                 bGreater = FALSE;
-            if (sLastData !== null) {
+            if (sLastData !== null && sLastData !== undefined) {
                 if (sLastData.localeCompare(sData) !== 0) {
                     oDiffObject = diff(oCanvas.width, oCanvas.height, aCanvasData, oLastImageData);
                     nPercentageDiff = oDiffObject.percentage;
