@@ -17,8 +17,8 @@ function confrontaCon(currentPic) {
 
 	IM.compare(document.body,
 		[
-			    document.getElementsById("sketch"),
-		       	document.getElementsById("compare")
+			    document.getElementById("sketch"),
+		       	document.getElementById("compare")
 		],
 		function success(aCanvas, nElapsedTime, nPercentageMatch) {
 		  // Code on success. All images have the same pixel info.
