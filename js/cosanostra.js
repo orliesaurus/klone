@@ -5,7 +5,7 @@ jQuery.fn.extend({
 });
 
 function immagineACaso() {
-  var immagini = new Array("C", "S", "T");
+  var immagini = new Array("C", "S", "T", "Star");
   return immagini[Math.floor(Math.random()*immagini.length)];
 }
 
