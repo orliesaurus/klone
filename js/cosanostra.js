@@ -4,12 +4,17 @@ jQuery.fn.extend({
     }
 });
 
+function immagineACaso() {
+  var immagini = new Array("C", "S", "T");
+  return immagini[Math.floor(Math.random()*immagini.length)];
+}
 
-function presentaImmagine(picUrl, compareUrl) {
-
+function presentaImmagine() {
+  var picID = immagineACaso()
+  
   $('#sketch').css("background-color","#222");
   $('#imgappr').fadeIn(1);
-  $('#imgappr').html('<img src=\"'+ picUrl +'\" height=\"'+dimens.toString()+'px\"/>');
+  $('#imgappr').html('<img src=\"images/'+ picID +'D.png\" height=\"'+dimens.toString()+'px\"/>');
   $('#imgappr').fadeOut(4000, function(){ $('#sketch').css('background-color','black') });
 
   if($('.yolocount').data('countdown') !== null && $('.yolocount').data('countdown') !== undefined ) {
@@ -23,7 +28,7 @@ function presentaImmagine(picUrl, compareUrl) {
         }
         },
         onEnd: function() {
-          confrontaCon(compareUrl);
+          confrontaCon('images/'+ picID +'.png');
           //reset the screen and go to next level
         }
     });
