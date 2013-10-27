@@ -39,3 +39,12 @@ function presentaImmagine() {
   }  
 
 }
+
+function resetGame() {
+  punti = 0;
+  livello = 1;
+  $("#punteggio").html(punti.toString()  + " Points!");
+  $("#livello").html("Level "+livello.toString());
+  sketcher.clear(); 
+  presentaImmagine();
+}
