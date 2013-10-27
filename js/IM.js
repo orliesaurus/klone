@@ -147,6 +147,7 @@
                         if (bDebug) {
                             nElapsedTime = (+new Date() - nTime);
                         }
+                        
                         fpFail(oCanvas, nElapsedTime, nPercentageDiff);
                     }
 

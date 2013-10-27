@@ -7,14 +7,14 @@ jQuery.fn.extend({
 //on Document Ready
   $(function() {
     $('.yolocount').countdown({
-          date: +(new Date) + 31000,
+          date: +(new Date) + 16000,
           render: function(data) {
         if (data.sec >= 1) {
           $(this.el).text(this.leadingZeros(data.sec-1, 2) + " sec")
         }
         },
         onEnd: function() {
-          confrontaCon('images/cd.png');
+          confrontaCon('images/c.png');
           //reset the screen and go to next level
         }
       });

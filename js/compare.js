@@ -1,8 +1,8 @@
 /* http://tcorral.github.io/IM.js/ */
 function confrontaCon(currentPic) {
 	IM.setDebug(false);
-	IM.setAsynchronous(true);
-	IM.setTolerance(0);
+	IM.setAsynchronous(false);
+	IM.setTolerance(100);
 
 	$('#imgappr').html('<canvas id="compare" style:"visible:hidden;"/>');
 	var can = document.getElementById('compare');
@@ -22,12 +22,12 @@ function confrontaCon(currentPic) {
 		],
 		function success(aCanvas, nElapsedTime, nPercentageMatch) {
 		  // Code on success. All images have the same pixel info.
-		  alert(nPercentageMatch.toString() + ": dovrebbe essere il punteggioottenuto");
+		  alert(nPercentageMatch.toString()  + " Points!")
 		  $('#imgappr').html('');
 		},
 		function fail(oCanvas, nElapsedTime, nPercentageMatch) {
 		 // Code on failing. Any image is different from others
-		 alert("Come cazzo hai fatto a sbagliare TUTTO? I pixel sono quasi tutti neri, c'mon!!!");
+		 console.log("Come cazzo hai fatto a sbagliare TUTTO? I pixel sono quasi tutti neri, c'mon!!!");
 		 $('#imgappr').html('');
 		});
 }
