@@ -11,7 +11,6 @@ function confrontaCon(currentPic) {
 
     var ctx = can.getContext('2d');
 
-	//ctx.globalCompositeOperation = "destination-over";
 	//set background color
 	//ctx.fillStyle = 'green';
 	//draw background / rect on entire this.canvas.get(0)

@@ -6,7 +6,7 @@ function Sketcher( canvasID, brushImage ) {
 	this.canvas = $("#"+canvasID);
 	this.context = this.canvas.get(0).getContext("2d");	
 	this.context.strokeStyle = "red";
-	this.context.lineWidth = 3;
+	this.context.lineWidth = 5;
 	this.lastMousePoint = {x:0, y:0};
     
 	if (this.touchSupported) {
