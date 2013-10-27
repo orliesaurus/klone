@@ -34,8 +34,10 @@ $(document).ready(function(e) {
   $("#sketch").attr("width",dimens);
   $("#sketch").attr("height",dimens);
   var sketchpos = $("#sketch").position();
+  var brushImg = new Image();
+  brushImg.src = "images/RD.png";
 
-  sketcher = new Sketcher( "sketch" );
+  sketcher = new Sketcher( "sketch" , brushImg );
   $("#sketch").img_load();
   $("#imgappr").css({"height": dimens, 
                       "width": dimens,
