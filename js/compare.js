@@ -30,7 +30,11 @@ function confrontaCon(currentPic) {
 		],
 		function success(aCanvas, nElapsedTime, nPercentageMatch) {
 		  // Code on success. All images have the same pixel info.
-		  alert(nPercentageMatch.toString()  + " Points!")
+		  if (nPercentageMatch) {
+
+		  	punti += nPercentageMatch
+		  	$("#punteggio").html(nPercentageMatch.toString()  + " Points!")
+		  }
 		  $('#imgappr').html('');
 		},
 		function fail(oCanvas, nElapsedTime, nPercentageMatch) {
