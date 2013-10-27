@@ -21,19 +21,6 @@
 
 <script>
 
-
-        /*render: function(data) {
-          $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
-        },
-        onEnd: function() {
-          $(this.el).addClass('ended');
-        }
-      }).on("click", function() {
-        $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
-      });
-
-*/
-
 var sketcher = null;
 var pic = null;
 var alt = window.innerHeight;
@@ -42,36 +29,29 @@ var dimens = Math.min(alt,larg)-100;
 
 
 $(document).ready(function(e) {
-	$("#sketch").attr("width",dimens);
+  $("#sketch").attr("width",dimens);
   $("#sketch").attr("height",dimens);
   var sketchpos = $("#sketch").position();
 
-	sketcher = new Sketcher( "sketch" );
-$("#sketch").img_load();
-$("#imgappr").css({"height": dimens, 
-                    "width": dimens,
-                    "top": sketchpos.top,
-                    "left": sketchpos.left,
-                    "position":"absolute"
+  sketcher = new Sketcher( "sketch" );
+  $("#sketch").img_load();
+  $("#imgappr").css({"height": dimens, 
+                      "width": dimens,
+                      "top": sketchpos.top,
+                      "left": sketchpos.left,
+                      "position":"absolute"
                     });
-$('#imgappr').html('<img src=\"images/cd.png\" height=\"'+dimens.toString()+'px\"/>');
-$('#imgappr').fadeOut(4000);
-});
 
-/*
-$(window).resize(function() {
- var alt = window.innerHeight;
-var larg = window.innerWidth;
-  $("#sketch").attr("width",larg);
-  $("#sketch").attr("height",alt);
-});*/
+  presentaImmagine('images/cd.png','images/c.png');
+
+});
 
 </script>
 
 </head>
 
 <body><div class="container">
-<a href="#"><input type="button" class="btn btn-success" value="New Game" onclick="sketcher.clear();" /></a>
+<a href="#"><input type="button" class="btn btn-success" value="New Game" onclick="sketcher.clear(); presentaImmagine('images/cd.png');" /></a>
 <a target="_blank" href="javascript: window.open(sketcher.toDataURL1('black'), 'Klone Save as Image');"><input type="button" class="btn btn-success" value="Save image"/></a>
 
 <li><div id="imgappr"></div><canvas id="sketch" width="1024" height="640"></canvas></li>

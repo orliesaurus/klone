@@ -6,13 +6,22 @@ function confrontaCon(currentPic) {
 
 	$('#imgappr').html('<canvas id="compare" style:"visible:hidden;"/>');
 	var can = document.getElementById('compare');
+	can.width = dimens;
+	can.height = dimens;
+
     var ctx = can.getContext('2d');
+
+	//ctx.globalCompositeOperation = "destination-over";
+	//set background color
+	//ctx.fillStyle = 'green';
+	//draw background / rect on entire this.canvas.get(0)
+	//ctx.fillRect(0,0,dimens,dimens);
+
     var img = new Image();
 	img.onload = function(){
-	    can.width = img.width;
-	    can.height = img.height;
 	    ctx.drawImage(img, 0, 0, dimens, dimens);
 	}
+
 	img.src = currentPic;
 
 	IM.compare(
@@ -27,7 +36,7 @@ function confrontaCon(currentPic) {
 		},
 		function fail(oCanvas, nElapsedTime, nPercentageMatch) {
 		 // Code on failing. Any image is different from others
-		 console.log("Come cazzo hai fatto a sbagliare TUTTO? I pixel sono quasi tutti neri, c'mon!!!");
+		 //alert(nPercentageMatch.toString()  + " Points! FAIL")
 		 $('#imgappr').html('');
 		});
 }
