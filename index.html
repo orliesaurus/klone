@@ -1,39 +1,59 @@
-<html>
-  <head>
-    <!-- Pull the engine from the Quintus CDN or load it locally -->
-    <!-- (use quintus-all.min.js for production) -->
-    <script src='http://cdn.html5quintus.com/v0.1.5/quintus-all.js'></script>
-  </head>
-   <body>
-     <script>
+<html><head>
+  <title> Klone </title>
 
-//var Q = Quintus({ development: true }).setup({ maximize: true }).include("Sprites, Scenes, Input, Touch");
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.rightbar {
+position: absolute;
+right:0px;
+width: 10%;
+height: 100%;
+background-color: #2B2C2C;
+}
+
+.topbar {
+position: absolute;
+left: 0px;
+width: 100%;
+height: 20em;
+top:-180px;
+background-image: url('./images/logo.png');
+background-repeat: no-repeat;
+background-color: transparent;
+}
+.fram {
+  position: absolute;
+height: 80%;
+width: 80%;
+  bottom: 0px;
+  border: 0px;
+
+}
+
+.icon-k  {
+  width: 50%;
+  height: 10%;
+}
+
+.icon-k#two {
+  position: absolute;
+
+  bottom: 0,
+}
+</style>
+</head>
+  <body>
+    <div class="container">
+    <div class="topbar"></div>
+      <div class="rightbar"><img class="icon-k" src="images/brush.png"><img class="icon-k" id="two" src="images/volume.png"></div>
+      <iframe class="fram" src="canvas.html"></iframe>
 
 
-var Q = Quintus().include("Sprites").setup();
+    </div>
 
-Q.Sprite.extend("Circle", {
-  init: function(p) {
-    this._super({
-      asset: "ball.png",
-      x: 150,
-      y: 150,
-      scale: 0.5
-    });
-  }
-});
-
-// Make sure penguin.png is loaded
-Q.load("ball.png",function() {
-   var penguin = new Q.Circle();
-
-   Q.gameLoop(function(dt) {
-     Q.clear();
-     penguin.update(dt);
-     penguin.render(Q.ctx);
-   });
- });
-
-   </script>
-   </body>
+  </body>
 </html>
