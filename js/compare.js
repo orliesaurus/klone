@@ -35,7 +35,7 @@ function confrontaCon(currentPic) {
 		  	punti += nPercentageMatch;
 		  	livello += 1;
 		  	$("#punteggio").html(nPercentageMatch.toString()  + " Points!");
-		  	$("#liello").html("Level "+livello.toString());
+		  	$("#livello").html("Level "+livello.toString());
 		  }
 		  $('#imgappr').html('');
 		},
