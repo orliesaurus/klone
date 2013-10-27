@@ -32,7 +32,7 @@ function confrontaCon(currentPic) {
 		  // Code on success. All images have the same pixel info.
 		  if (nPercentageMatch) {
 
-		  	punti += nPercentageMatch;
+		  	punti += Math.floor(nPercentageMatch);
 		  	livello += 1;
 		  	$("#punteggio").html(nPercentageMatch.toString()  + " Points!");
 		  	$("#livello").html("Level "+livello.toString());
