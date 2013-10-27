@@ -30,6 +30,7 @@ function presentaImmagine() {
         onEnd: function() {
           confrontaCon('images/'+ picID +'.png');
           //reset the screen and go to next level
+          delete $('.yolocount').data('countdown');
         }
     });
   }  
